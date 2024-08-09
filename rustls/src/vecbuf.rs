@@ -144,7 +144,7 @@ impl ChunkVecBuffer {
 
         let used = {
             let chunks = self.chunks.iter()
-                .map(convert::AsRef::as_ref)
+                .map(AsRef::as_ref)
                 .collect::<Vec<&[u8]>>();
 
             wr.writev(&chunks)?
